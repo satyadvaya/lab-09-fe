@@ -7,10 +7,13 @@ export default class Planets extends Component {
         loading: true
     }
     async componentDidMount() {
-        
-    console.log("Haylow world ...");
-        const data = await request.get('https://stormy-meadow-96140.herokuapp.com/planets');
-        this.setState({planets: data.body, loading: false});
+        try {
+            const data = await request.get('https://stormy-meadow-96140.herokuapp.com/planets');
+            this.setState({planets: data.body, loading: false});
+        } catch(e) {
+            console.log(e);
+        }
+
     }
     render() {
         return (
