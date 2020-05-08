@@ -4,6 +4,7 @@ import List from './List.js';
 
 export default class Planets extends Component {
     state = {
+        planets: [],
         loading: true
     }
     async componentDidMount() {
