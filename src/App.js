@@ -7,11 +7,14 @@ import {
 import Planets from './Planets.js';
 import About from './About.js';
 import PlanetDetail from './PlanetDetail.js';
+import AdminPage from './AdminPage.js';
+import './App.css';
+
 
 export default class App extends Component {
     render() {
         return (
-            <div>
+            <div className="container">
                 <Router>
                     <Switch>
                         <Route 
@@ -26,6 +29,10 @@ export default class App extends Component {
                         <Route 
                             path='/about'
                             render={(routerProps) => <About {...routerProps} />} 
+                        />
+                        <Route 
+                            path='/admin'
+                            render={(routerProps) => <AdminPage {...routerProps} />} 
                         />
                     </Switch>
                 </Router>

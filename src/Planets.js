@@ -7,9 +7,13 @@ export default class Planets extends Component {
         planets: [],
         loading: true
     }
-    async componentDidMount() {
+    componentDidMount = async () => {
         try {
             const data = await request.get('https://stormy-meadow-96140.herokuapp.com/planets');
+            // const data = await request.get('https://localhost:3002/planets');
+
+            console.log('|| data', data)
+
             this.setState({planets: data.body, loading: false});
         } catch(e) {
             console.log(e);
@@ -19,11 +23,11 @@ export default class Planets extends Component {
     render() {
         return (
             <div>
+                <h1>A Smattering of Planets</h1>
                 {
-                    this.state.loading ?
-                    <h2>Loading</h2>
-                    :
-                    <List data={this.state.planets}/>
+                    this.state.loading
+                    ? <h2>Loading</h2>
+                    : <List data={this.state.planets}/>
                 }
             </div>
         )
