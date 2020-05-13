@@ -9,6 +9,8 @@ import About from './About.js';
 import PlanetDetail from './PlanetDetail.js';
 import AdminPage from './AdminPage.js';
 import './App.css';
+import Particles from './Particles.js';
+import ParticleDetail from './ParticleDetail.js';
 
 
 export default class App extends Component {
@@ -25,6 +27,14 @@ export default class App extends Component {
                         <Route 
                             path='/Planets/:Planet'
                             render={(routerProps) => <PlanetDetail {...routerProps} />} 
+                        />
+                            path='/Particles'
+                            exact
+                            render={(routerProps) => <Particles {...routerProps} />} 
+                        />
+                        <Route 
+                            path='/Particles/:Particle'
+                            render={(routerProps) => <ParticleDetail {...routerProps} />} 
                         />
                         <Route 
                             path='/about'

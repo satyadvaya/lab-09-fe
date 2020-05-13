@@ -15,7 +15,7 @@ export default class PlanetDetail extends Component {
             <div>
                 detail
                 <div>
-                    {this.state.song
+                    {this.state.planet
                     ? JSON.stringify(this.state.planet)
                     : 'LOADING'}
                 </div>
